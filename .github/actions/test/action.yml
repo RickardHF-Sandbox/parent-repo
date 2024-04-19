@@ -1,0 +1,23 @@
+name: 'My Action'
+
+description: 'My reusable action'
+
+inputs:
+  source:
+    description: 'The source of where it's coming from'
+    required: true
+    
+runs:
+  using: 'composite'
+  steps:
+    - name: Test Application 
+      run: |
+        RANDOM_NUMBER=$(python -c "import random; print(random.random())")
+        echo "Generated random number is $RANDOM_NUMBER"
+        if (( $(echo "$RANDOM_NUMBER < 0.5" | bc -l) )); then
+          echo "Failing the step"
+          exit 1
+        fi
+    - name:  Output Source
+      run: |
+        echo "Source is ${{ github.event.inputs.source }}"
