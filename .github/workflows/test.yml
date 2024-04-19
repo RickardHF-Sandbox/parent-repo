@@ -2,9 +2,15 @@ name: Test
 
 on:
   workflow_dispatch:
+    inputs:
+      source:
+        description: 'Source'
+        required: true
+        default: 'test_application'
 
 jobs:
   test_application:
+    runs-on: ubuntu-latest
     steps:
       - name: Test Application 
         run: |
@@ -14,3 +20,6 @@ jobs:
             echo "Failing the step"
             exit 1
           fi
+      - name:  Output Source
+        run: |
+          echo "Source is ${{ github.event.inputs.source }}"
