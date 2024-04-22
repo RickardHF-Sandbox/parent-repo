@@ -6,7 +6,7 @@ inputs:
   source:
     description: 'The source of where it's coming from'
     required: true
-    
+
 runs:
   using: 'composite'
   steps:
