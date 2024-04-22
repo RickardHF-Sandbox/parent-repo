@@ -4,7 +4,7 @@ description: 'My reusable action'
 
 inputs:
   source:
-    description: 'The source of where it's coming from'
+    description: 'The source of where its coming from'
     required: true
 
 runs:
