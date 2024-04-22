@@ -18,6 +18,8 @@ runs:
           echo "Failing the step"
           exit 1
         fi
+      shell: bash
     - name:  Output Source
       run: |
-        echo "Source is ${{ github.event.inputs.source }}"
+        echo "Source is ${{ inputs.source }}"
+      shell: bash
