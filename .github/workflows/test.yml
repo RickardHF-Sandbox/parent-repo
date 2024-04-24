@@ -1,11 +1,12 @@
-name: Test 
+name: Test Re-Usable
 
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
       source:
         description: 'Source'
         required: true
+        type: string
         default: 'test_application'
 
 jobs:
