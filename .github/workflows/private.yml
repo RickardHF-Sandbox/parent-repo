@@ -3,7 +3,7 @@ name: SelfHosted runner
 on:
   workflow_dispatch:
 
-runs:
+jobs:
   hello_world:
     runs-on: ['wolf']
     steps:
