@@ -1,0 +1,10 @@
+name: SelfHosted runner
+
+on:
+  workflow_dispatch:
+
+runs:
+  hello_world:
+    runs-on: ['wolf']
+    steps:
+      - run: echo "Hello world"
